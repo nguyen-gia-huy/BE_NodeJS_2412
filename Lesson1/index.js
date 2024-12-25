@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const http = require('http');
 
-const dataFilePath = path.join(__dirname, 'data.json');
+const dataFilePath = path.join(__dirname, 'db.json');
 
 const readDataFromFile = () => {
 	const data = fs.readFileSync(dataFilePath, 'utf8');
@@ -80,7 +80,7 @@ const server = http.createServer((req, res) => {
 	});
 });
 
-const PORT = 3000;
+const PORT = 4000;
 server.listen(PORT, () => {
 	console.log(`Server đang được chạy trên port: ${PORT}`);
 });
