@@ -80,7 +80,7 @@ const server = http.createServer((req, res) => {
       if (method === "GET") {
         const booksWithAuthors = books.map((book) => ({
           ...book,
-          authors: authors.find((author) => author.id === book.authorId) || nul,
+          authors: authors.find((author) => author.id === book.authorId) || null,
         }));
         res.writeHead(200, { "Content-Type": "application/json" });
         res.end(JSON.stringify(booksWithAuthors));
