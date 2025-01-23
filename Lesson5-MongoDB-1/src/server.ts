@@ -3,7 +3,8 @@ import express from 'express';
 import mongoose from 'mongoose';
 import coursesRouter from './routes/course.route';
 import usersRouter from './routes/user.route';
-
+import postsRouter from './routes/post.route';
+import commentRouter from './routes/comment.route';
 dotenv.config();
 
 const app = express();
@@ -25,7 +26,8 @@ const connectDB = async () => {
 app.use(express.json())
 app.use('/api/courses', coursesRouter);
 app.use('/api/users', usersRouter);
-
+app.use('/api/posts', postsRouter);
+app.use('/api/comments', commentRouter);
 app.listen(PORT, () => {
 	console.log('Server is running on port', PORT);
 	connectDB();
