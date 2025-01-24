@@ -16,10 +16,10 @@ export const createComment = async (req: Request, res: Response) => {
       text,
       author,
       post_id,
-    });
+    }); 
     await newComment.save();
     //them id cua binh luan vao mang comments cua post
-    post.comments.push(newComment._id);
+    post.comments.push(newComment._id); 
     await post.save();
     res.status(201).json({
       message: "Comment created successfully",
